@@ -1,0 +1,10 @@
+# python files
+*.pyc
+
+# database
+*.sqlite3
+
+# local temp. files
+*.py~
+*.html~
+
