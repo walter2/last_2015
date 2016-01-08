@@ -71,3 +71,7 @@ h1, h2, h3, h4 {
     margin: 20px 0px 20px 20px;
 }
 
+.in_button_label_margin::before {
+    margin-right: 5px;
+}
+
