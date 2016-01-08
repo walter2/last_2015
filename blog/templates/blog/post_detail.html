@@ -14,7 +14,7 @@
 
         {% if post.published_date %}
             <div class="date">
-                published from {{ user.username }} on: {{ post.published_date }}
+                written by {{ post.author.username }} published on: {{ post.published_date }}
             </div>
         {% else %}
             <a class="btn btn-default post_publish_button" href="{% url 'blog.views.post_publish' pk=post.pk %}">Publish</a>
