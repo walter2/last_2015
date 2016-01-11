@@ -7,13 +7,23 @@ from .models import Comment, Post
 
 
 def post_list(request):
+    """ Returns a list of posts and the number of unapproved comments."""
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-    return render(request, 'blog/post_list.html', {'posts': posts})
+    unapproved_comments = Comment.objects.filter(approved_comment=False).count
+    return render(request, 'blog/post_list.html', {
+        'posts': posts,
+        'unapproved_comments': unapproved_comments
+        })
 
 
 def post_detail(request, pk):
+    """ Returns a post and the number of unapproved comments."""
     post = get_object_or_404(Post, pk=pk)
-    return render(request, 'blog/post_detail.html', {'post': post})
+    unapproved_comments = Comment.objects.filter(approved_comment=False).count
+    return render(request, 'blog/post_detail.html', {
+        'post': post,
+        'unapproved_comments': unapproved_comments
+        })
 
 
 @login_required

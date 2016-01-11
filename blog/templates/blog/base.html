@@ -22,6 +22,8 @@
                 <a href="{% url 'post_draft_list' %}" class="top-menu">
                     <span class="glyphicon glyphicon-edit"></span>
                 </a>
+                <p class="top-menu">- Comments {{ unapproved_comments }} -
+                </p>
                 <p class="top-menu">Hello {{ user.username }}
                     <small>
                         (<a href="{% url 'django.contrib.auth.views.logout' %}">Logout</a>)
