@@ -22,7 +22,8 @@
                 <a href="{% url 'post_draft_list' %}" class="top-menu">
                     <span class="glyphicon glyphicon-edit"></span>
                 </a>
-                <p class="top-menu">- Comments {{ unapproved_comments }} -
+                <p class="top-menu">- <a href="{% url 'unapproved_comments'%}">
+                    Comments {{ unapproved_comments }}</a> -
                 </p>
                 <p class="top-menu">Hello {{ user.username }}
                     <small>

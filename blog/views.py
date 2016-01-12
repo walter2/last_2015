@@ -15,6 +15,13 @@ def post_list(request):
         'unapproved_comments': unapproved_comments
         })
 
+@login_required
+def unapproved_comments(request):
+    unapproved_comments = Comment.objects.filter(approved_comment=False)
+    return render(request, 'blog/unapproved_comments.html', {
+        'unapproved_comment_list': unapproved_comments
+        })
+
 
 def post_detail(request, pk):
     """ Returns a post and the number of unapproved comments."""

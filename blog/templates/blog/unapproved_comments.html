@@ -1,0 +1,37 @@
+{% extends 'blog/base.html'%}
+
+{% block content %}
+
+    <h1>All unapproved comments are listed here</h1>
+    <div>
+        {% for comment in unapproved_comment_list %}
+            <h1>{{ comment.post.title }}</h1>
+            <p>{{ comment.post.text|linebreaks }}</p>
+            <hr>
+
+            {% for post_comment in comment.post.comments.all %}
+
+                <div>
+                    {% if not post_comment.approved_comment %}
+                        <p><a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}">
+                            <span class="glyphicon glyphicon-remove in_button_label_margin">Delete</span>
+                        </a>
+                        <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}">
+                            <span class="glyphicon glyphicon-ok in_button_label_margin">Approve</span>
+                        </a></p>
+                    {% endif %}
+                </div>
+
+                <div class="comment-margin-bottom">
+                    <p><strong>created by {{ post_comment.author }} on {{ post_comment.created_date }}</strong></p>
+                    <p>{{ post_comment.text|linebreaks }}</p>
+                </div>
+            {% endfor %}
+            <hr>
+
+        {% endfor %}
+
+    </div>
+
+{% endblock %}
+
