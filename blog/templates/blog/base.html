@@ -36,12 +36,10 @@
                 </a>
             {% endif %}
             <h1><a href="/">Last 2015 - Blog</a></h1>
-        </div>
-
-        <div>
-            <a href="{% url 'post_list' %}">Blog</a> |
-            <a href="{% url 'about_site' %}">About</a> |
-            <a href="{% url 'site_links' %}">Links</a>
+            <hr>
+            <a href="{% url 'post_list' %}"><strong>Blog</strong></a> |
+            <a href="{% url 'about_site' %}"><strong>About</strong></a> |
+            <a href="{% url 'site_links' %}"><strong>Links</strong></a>
         </div>
 
         <div class="content container">
