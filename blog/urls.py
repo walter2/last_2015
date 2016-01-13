@@ -8,6 +8,7 @@ urlpatterns = [
     url(r'^comment/(?P<pk>[0-9]+)/remove/$', views.comment_remove, name='comment_remove'),
     url(r'^comment/unapproved/$', views.unapproved_comments, name='unapproved_comments'),
     url(r'^drafts/$', views.post_draft_list, name='post_draft_list'),
+    url(r'^links/$', views.site_links, name='site_links'),
     url(r'^post/(?P<pk>[0-9]+)$', views.post_detail, name='post_detail'),
     url(r'^post/(?P<pk>[0-9]+)/comment/$', views.add_comment_to_post, name='add_comment_to_post'),
     url(r'^post/(?P<pk>[0-9]+)/edit/$', views.post_edit, name='post_edit'),

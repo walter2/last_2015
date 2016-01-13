@@ -111,6 +111,11 @@ def comment_remove(request, pk):
     comment.delete()
     return redirect('blog.views.post_detail', pk=post_pk)
 
+
 def about_site(request):
     return render(request, 'blog/about_site.html')
+
+
+def site_links(request):
+    return render(request, 'blog/site_links.html')
 
