@@ -27,7 +27,7 @@ with open(os.path.join(BASE_DIR, 'etc/secret_key.txt')) as f:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['walter2.pythonanywhere.com']
+ALLOWED_HOSTS = ['www.calmviews.net', 'calmviews.net']
 
 
 # Application definition
